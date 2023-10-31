@@ -1,0 +1,749 @@
+
+
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: hsl(252, 30%, 95%);
+            color: hsl(252, 30%, 17%);
+            overflow: scroll;
+            padding-top: 5vh;
+            
+
+        }
+
+        .container{
+            width: 80%;
+            margin: 0 auto ;
+
+        }
+
+        nav{
+            width: 100%;
+            height: 10%;
+            background-color: hsl(252, 30%, 100%);
+            box-shadow: 0px 20px 16px rgba(0, 0, 0, 0.1);
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            padding: 0.7rem 0 ;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            background-size: cover;
+        }
+
+        nav .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-bar {
+            background-color: hsl(252, 30%, 95%);
+            border-radius: 2rem;
+            padding: 0.6rem 1rem;
+
+        }
+
+        .search-bar input[type ="search"] {
+            background: transparent;
+            width: 30vw;
+            margin-left: 1rem;
+            font-size: 0.9rem ;
+            color: hsl(252, 30%, 17%);
+        }
+
+        nav .button {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        #menuToggle {
+            display: none;
+        }
+        
+        #menuToggle:checked + .hamburger-menu + .nav-links {
+            display: flex;
+        }
+
+     
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            font-weight: 500;
+            border-radius: 2rem;
+            cursor: pointer;
+            color: white;
+            background-color:lightblue;
+            transition: all 300ms ease;
+
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .link{
+
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            text-decoration: none;
+          
+        }
+
+        .link:hover{
+            text-decoration: none;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 4px 0;
+            background-color: #333;
+        }
+        
+        .navbar-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* hide the menu by default */
+        #navbarMenu {
+            display: none;
+        }
+        
+        /* styles to make the navbar responsive */
+        @media screen and (min-width: 768px) {
+            #navbarToggle {
+                display: none;
+            }
+            #navbarMenu {
+                display: block;
+            }
+        }
+        
+
+/* Add styles for the hamburger menu */
+
+
+        /*-------------------------MAIN---------------------------------------------*/
+
+
+        /*----------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------- */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use viewport width units */
+    height: 100vh; /* Use viewport height units */
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.feedback-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid red;
+    background-color: #fdd;
+    color: red;
+    display: none; /* Initially hidden */
+}
+
+
+/* LOGIN */
+.modern-login-form {
+    display: none;
+    max-width: 600px;
+    min-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    left      : 37%;
+    top       : 36%;
+    position  : fixed;
+    transform : translate(-50%, -50%);
+    animation: slideIn 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* Style the form header */
+.modern-login-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style input fields */
+.modern-login-form input[type="text"], .modern-login-form input[type="email"], .modern-login-form input[type="tel"], .modern-login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modern-login-form input[type="submit"] {
+    background-color: lightblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+/* Hover effect for the submit button */
+.modern-login-form input[type="submit"]:hover {
+    background-color: lightblue;
+}
+
+/*----------SIGN UP-------------*/
+.modern-signup-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+
+.btnClose {
+   
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+/* Style the "Sign up" link */
+.signup-link {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    color: lightblue;
+    font-weight: bold;
+}
+
+/* Hover effect for the "Sign up" link */
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Apply styles to the form container */
+.modern-signup-form {
+    display: none;
+    max-width: 600px;
+    min-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    left: 38%;
+    top: 10%;
+    position  : fixed;
+    transform : translate(-50%, -50%);
+    animation: slideIn 0.5s ease-in-out;
+    z-index: 1000;
+
+    
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-50%, -150%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*----------------------------------------------*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.property-card, .modern-login-form, .modern-signup-form, .container {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Style the form header */
+.modern-signup-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style input fields */
+.modern-signup-form input[type="text"], .modern-signup-form input[type="email"], .modern-signup-form input[type="tel"],
+.modern-signup-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style select dropdown */
+.modern-signup-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Style the submit button */
+.modern-signup-form input[type="submit"] {
+    background-color: lightblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Hover effect for the submit button */
+.modern-signup-form input[type="submit"]:hover {
+    background-color: lightblue;
+}
+
+
+
+/*Property card*/
+.property-card {
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+main {
+            background-color: transparent; /* Change the background color as desired */
+            padding: 5rem; /* Adjust the padding as needed */
+            margin-top: 80px; /* Height of the navigation bar */
+         
+            display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+ /* padding: 20px;*/
+ margin-top: 40px;
+  max-height: 87.5vh; /* Adjust this value as needed */
+  overflow-y: auto;
+  z-index: -1;
+
+        }
+
+/*.property-grid {
+    display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  max-height: 80vh;  Adjust this value as needed 
+  overflow-y: auto;
+}*/
+
+
+
+.property-card:hover {
+    transform: scale(1.05);
+}
+
+.property-image {
+   
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.property-details {
+    padding: 20px;
+}
+
+.property-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.property-location {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.property-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.property-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.property-rating .star {
+    color: #FFD700;
+    margin-right: 5px;
+}
+
+.property-description {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+
+/*Property card*/
+
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: hsl(252, 30%, 100%); /* Change the background color as desired */
+ padding: 1rem; /* Adjust the padding as needed */
+bottom: 0;
+width: 100%;
+z-index: 997 ;
+
+}
+
+
+
+        /* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+/*=============================== End Index=================================================================================*/
+
+
+
+.contact-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+     min-height: 66vh;
+    min-width: 125vh;
+}
+
+/* Style the contact list */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* Style the contact image */
+.contact-image {
+    flex: 1;
+    padding: 10px;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the contact text */
+.contact-text {
+    flex: 2;
+    padding: 10px;
+}
+
+.contact-text h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-text p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+
+/*=============================== End Contact Us=================================================================================*/
+
+
+
+.about-us-container {
+   
+   
+    margin: 0 auto;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    min-height: 66vh;
+    min-width: 125vh;
+    z-index: -1;
+}
+
+
+
+/* Style the logo */
+.logo {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the about text */
+.about-text {
+    flex: 2;
+    text-align: center;
+}
+
+.about-text h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/*=============================== End About Us=================================================================================*/
+
+
+
+
+.modern-form {
+    min-width: 60%;
+    /*margin: 0 auto;*/
+    margin-top: 60px;
+    padding: 20px;
+   background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: scroll;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Style labels */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: lightblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Hover effect for the submit button */
+input[type="submit"]:hover {
+    background-color: lightblue;
+}
+
+
+/*=============================== End Add Digs=================================================================================*/
+
+
+
+.card {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust the width as needed */
+    height: 650px;
+    margin-bottom: 20px;
+    padding: 20px;
+   
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+table {
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse;
+    width: 75%;
+}
+
+table tr {
+    height: 100px; /* Increase row height vertically */
+}
+
+table td {
+    font-size: 18px; /* Increase font size in table cells */
+    padding: 5px 10px; /* Add padding for better spacing */
+    border-bottom: 1px solid #ccc; /* Add horizontal borders */
+}
+
+table td:first-child {
+    font-weight: bold; /* Make the first column bold */
+}
